@@ -1,8 +1,7 @@
-RecursiveBacktracker.java generates the maze (set width and height in main method in the class)
-
-DrawMaze.java shows the finished maze.
-
 Example mazes:
 (width = 20, height = 20)
 
-![alt text](maze_0.png)
+![Maze](maze_0.png)
+
+(width = 100, height = 20)
+![Maze](maze_2.png)

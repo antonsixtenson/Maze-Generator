@@ -43,6 +43,9 @@ public class Node {
     }
 
     /*
+    (When drawing the walls we only need to consider the south and east wall
+    since these also will function as north and west wall for adjacent nodes.)
+
     Check if 4th-bit is set to 1
      */
     public boolean hasSouthWall(){

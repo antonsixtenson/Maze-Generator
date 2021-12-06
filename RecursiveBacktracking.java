@@ -34,30 +34,32 @@ public class RecursiveBacktracking {
     public void genMaze()  {
         Random rand = new Random();
         while(numVisited < w*h){
+            int x = stack.peek().x;
+            int y = stack.peek().y;
             // Create list of unvisited neighbours
             ArrayList<Node> neighbours = new ArrayList<>();
             //Look North
             if(stack.peek().y > 0) {
-                if (!(maze[(stack.peek().x)][(stack.peek().y - 1)].isVisited())) {
-                    neighbours.add(maze[stack.peek().x][stack.peek().y - 1]);
+                if (!(maze[(x)][y-1].isVisited())) {
+                    neighbours.add(maze[x][y-1]);
                 }
             }
             // Look East
-            if(stack.peek().x < w-1) {
-                if (!(maze[(stack.peek().x + 1)][(stack.peek().y)].isVisited())) {
-                    neighbours.add(maze[(stack.peek().x + 1)][stack.peek().y]);
+            if(x < w-1) {
+                if (!(maze[x+1][y].isVisited())) {
+                    neighbours.add(maze[x+1][y]);
                 }
             }
             // Look South
-            if(stack.peek().y < h-1) {
-                if (!(maze[(stack.peek().x)][(stack.peek().y + 1)].isVisited())) {
-                    neighbours.add(maze[stack.peek().x][stack.peek().y + 1]);
+            if(y < h-1) {
+                if (!(maze[x][y+1].isVisited())) {
+                    neighbours.add(maze[x][y+1]);
                 }
             }
             // Look West
             if(stack.peek().x > 0) {
-                if (!(maze[(stack.peek().x - 1)][(stack.peek().y)].isVisited())) {
-                    neighbours.add(maze[(stack.peek().x - 1)][stack.peek().y]);
+                if (!(maze[x-1][y].isVisited())) {
+                    neighbours.add(maze[x-1][y]);
                 }
             }
 
@@ -70,24 +72,22 @@ public class RecursiveBacktracking {
                  */
 
                 //Passage North
-                int x = stack.peek().x;
-                int y = stack.peek().y;
-                if(stack.peek().y > next.y){
+                if(y > next.y){
                     maze[x][y].addPassage(1);
                     maze[next.x][next.y].addPassage(4);
                 }
                 //Passage East
-                if(stack.peek().x > next.x){
+                if(x > next.x){
                     maze[x][y].addPassage(8);
                     maze[next.x][next.y].addPassage(2);
                 }
                 //Passage South
-                if(stack.peek().y < next.y){
+                if(y < next.y){
                     maze[x][y].addPassage(4);
                     maze[next.x][next.y].addPassage(1);
                 }
                 //Passage West
-                if(stack.peek().x < next.x){
+                if(x < next.x){
                     maze[x][y].addPassage(2);
                     maze[next.x][next.y].addPassage(8);
                 }

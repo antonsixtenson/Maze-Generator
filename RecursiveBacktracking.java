@@ -39,8 +39,8 @@ public class RecursiveBacktracking {
             // Create list of unvisited neighbours
             ArrayList<Node> neighbours = new ArrayList<>();
             //Look North
-            if(stack.peek().y > 0) {
-                if (!(maze[(x)][y-1].isVisited())) {
+            if(y > 0) {
+                if (!(maze[x][y-1].isVisited())) {
                     neighbours.add(maze[x][y-1]);
                 }
             }

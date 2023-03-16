@@ -57,7 +57,7 @@ public class RecursiveBacktracking {
                 }
             }
             // Look West
-            if(stack.peek().x > 0) {
+            if(x > 0) {
                 if (!(maze[x-1][y].isVisited())) {
                     neighbours.add(maze[x-1][y]);
                 }

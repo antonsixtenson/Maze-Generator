@@ -5,7 +5,7 @@ Uses Backtracking to generate mazes
 
 (width = 20, height = 20)
 
-![Maze](maze_0.png)
+![Maze](maze_gen.gif)
 
 (width = 100, height = 20)
 ![Maze](maze_2.png)
